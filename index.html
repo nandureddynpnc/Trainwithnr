@@ -3,54 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Train With NR</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TRAIN WITH NR - Beginner Fat Loss Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .workout-day {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .workout-day h3 {
+            margin-top: 0;
+            color: #e74c3c;
+        }
+        .exercise {
+            margin-bottom: 8px;
+        }
+        .cardio {
+            font-weight: bold;
+            color: #27ae60;
+            margin-top: 10px;
+        }
+        .dropdown-content {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>TRAIN WITH NR</h1>
+        <h2>Beginner Fat Loss Workout Plan</h2>
         <a href="#join" class="btn">JOIN FREE PROGRAM</a>
     </header>
 
-    <section class="cards">
-        <div class="card">
-            <h3>BEGINNER WORKOUTS</h3>
-            <a href="#workouts" class="btn">View Workouts</a>
-        </div>
-        <div class="card">
-            <h3>ADVANCED DIET PLANS</h3>
-            <a href="#diet" class="btn">Get Diet Plans</a>
-        </div>
-        <div class="card">
-            <h3>PERSONALIZED COACHING</h3>
-            <a href="#contact" class="btn">Contact Me</a>
+    <section class="workouts">
+        <button id="viewWorkoutsBtn" class="btn">View Full Workout Plan</button>
+        
+        <div id="workoutsDropdown" class="dropdown-content">
+            <!-- Monday -->
+            <div class="workout-day">
+                <h3>Monday: Upper Body</h3>
+                <div class="exercise">Bench Press - 4x10</div>
+                <div class="exercise">Shoulder Press - 4x12</div>
+                <div class="exercise">Lat Pulldown - 4x12</div>
+                <div class="exercise">Dumbbell Rows - 3x12</div>
+                <div class="exercise">Bicep Curls - 3x15</div>
+                <div class="exercise">Triceps Pushdown - 3x15</div>
+                <div class="cardio">Cardio: 15-20 min treadmill incline walk</div>
+            </div>
+
+            <!-- Tuesday -->
+            <div class="workout-day">
+                <h3>Tuesday: Legs</h3>
+                <div class="exercise">Squats - 4x12</div>
+                <div class="exercise">Romanian Deadlifts - 4x12</div>
+                <div class="exercise">Leg Press - 4x12</div>
+                <div class="exercise">Calf Raises - 4x15</div>
+                <div class="exercise">Lunges - 3x12</div>
+                <div class="cardio">Cardio: 10 min</div>
+            </div>
+
+            <!-- Wednesday -->
+            <div class="workout-day">
+                <h3>Wednesday: Abs & Cardio</h3>
+                <div class="cardio">30-40 min walking or cycling</div>
+                <div class="exercise">Planks - 3x60s</div>
+                <div class="exercise">Leg Raises - 3x15</div>
+                <div class="exercise">Russian Twists - 3x20</div>
+            </div>
+
+            <!-- Thursday -->
+            <div class="workout-day">
+                <h3>Thursday: Chest, Shoulders, Triceps</h3>
+                <div class="exercise">Incline Dumbbell Press - 4x10</div>
+                <div class="exercise">Shoulder Raises - 3x12</div>
+                <div class="exercise">Triceps Rope Pushdown - 3x15</div>
+                <div class="exercise">Shoulder Dumbbell Press - 3x12</div>
+                <div class="exercise">Close-Grip Push-Ups - 3x15</div>
+                <div class="cardio">Cardio: 15-20 min Stairmaster</div>
+            </div>
+
+            <!-- Friday -->
+            <div class="workout-day">
+                <h3>Friday: Back & Biceps</h3>
+                <div class="exercise">Deadlifts - 4x10</div>
+                <div class="exercise">Lat Pulldown - 4x12</div>
+                <div class="exercise">Barbell Rows - 4x12</div>
+                <div class="exercise">Face Pulls - 3x12</div>
+                <div class="exercise">Hammer Curls - 3x12</div>
+                <div class="cardio">Cardio: 10 min rowing machine</div>
+            </div>
+
+            <!-- Weekend -->
+            <div class="workout-day">
+                <h3>Saturday & Sunday:</h3>
+                <div class="cardio">Light Cardio (optional)</div>
+                <div class="exercise">Rest or active recovery</div>
+            </div>
         </div>
     </section>
 
-    <section class="about">
-        <h2>ABOUT ME</h2>
-        <img src="trainer.jpg" alt="Trainer Photo" width="150" style="border-radius: 50%;">
-        <p>I'm a certified personal trainer with a passion for helping clients achieve muscle gain, fat loss, and strength!</p>
-        <div class="social">
-            <a href="https://youtube.com/nandureddy1470" target="_blank">
-                <img src="youtube.png" alt="YouTube">
-            </a>
-            <a href="https://instagram.com/nandureddy_4" target="_blank">
-                <img src="instagram.png" alt="Instagram">
-            </a>
-        </div>
-    </section>
-
-    <section class="resources">
-        <h2>FREE RESOURCES</h2>
-        <div class="card">
-            <h3>WORKOUT GUIDE</h3>
-            <a href="workout.pdf" class="btn">Download PDF</a>
-        </div>
-        <div class="card">
-            <h3>NUTRITION PLAN</h3>
-            <a href="nutrition.pdf" class="btn">Download PDF</a>
-        </div>
-    </section>
+    <script>
+        document.getElementById('viewWorkoutsBtn').addEventListener('click', function() {
+            const dropdown = document.getElementById('workoutsDropdown');
+            dropdown.classList.toggle('show');
+            this.textContent = dropdown.classList.contains('show') ? 
+                'Hide Workout Plan' : 'View Full Workout Plan';
+        });
+    </script>
 </body>
 </html>
