@@ -1,0 +1,49 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    background: #0074d9;
+    color: white;
+    padding: 2rem;
+}
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #0074d9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.about, .resources {
+    padding: 2rem;
+}
+.about img {
+    width: 150px;
+    border-radius: 50%;
+    margin: 1rem 0;
+}
+.social img {
+    width: 30px;
+    margin: 0 0.5rem;
+}
