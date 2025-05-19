@@ -269,7 +269,7 @@
         </div>
     </header>
 
-    <section class="container">
+    <section id="join" class="container">
         <h3>BEGINNER WORKOUTS</h3>
         <div class="features">
             <div class="feature-card">
@@ -293,9 +293,21 @@
         </div>
     </section>
 
+    <section id="workouts" class="container">
+        <h3>WORKOUT PLANS</h3>
+        <p>Our beginner workout plans are designed for all fitness levels</p>
+        <!-- Add your workout content here -->
+    </section>
+
+    <section id="diet" class="container">
+        <h3>DIET PLANS</h3>
+        <p>Custom nutrition plans to complement your training</p>
+        <!-- Add your diet content here -->
+    </section>
+
     <hr class="divider">
 
-    <section class="section-dark">
+    <section id="coaching" class="section-dark">
         <div class="container">
             <h3>ABOUT ME</h3>
             <div class="about-content">
@@ -329,8 +341,8 @@
         <div class="container">
             <h3>FREE RESOURCES</h3>
             <p>Sign up for our newsletter to receive exclusive content</p>
-            <form style="max-width: 500px; margin: 0 auto;">
-                <input type="email" placeholder="Your Email" style="padding: 12px; width: 60%; border: none; border-radius: 30px 0 0 30px;">
+            <form id="newsletterForm" style="max-width: 500px; margin: 0 auto;">
+                <input type="email" id="emailInput" placeholder="Your Email" required style="padding: 12px; width: 60%; border: none; border-radius: 30px 0 0 30px;">
                 <button type="submit" class="btn" style="border-radius: 0 30px 30px 0; margin-left: -5px;">Subscribe</button>
             </form>
         </div>
@@ -395,33 +407,68 @@
 
     <script>
         // Modal functionality
-        const modal = document.getElementById("dietPlanModal");
-        const btn = document.getElementById("dietPlanBtn");
-        const span = document.getElementsByClassName("close")[0];
-        
-        btn.onclick = function() {
-            modal.style.display = "block";
-            document.body.style.overflow = "hidden";
-        }
-        
-        span.onclick = function() {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-        
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto";
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById("dietPlanModal");
+            const btn = document.getElementById("dietPlanBtn");
+            const span = document.getElementsByClassName("close")[0];
+            
+            if (btn) {
+                btn.addEventListener('click', function() {
+                    modal.style.display = "block";
+                    document.body.style.overflow = "hidden";
+                });
             }
-        }
-        
-        // Close modal when pressing Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto";
+            
+            if (span) {
+                span.addEventListener('click', function() {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                });
             }
+            
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                }
+            });
+            
+            // Close modal when pressing Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Escape") {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                }
+            });
+            
+            // Form submission
+            const form = document.getElementById('newsletterForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('emailInput').value;
+                    if (email) {
+                        alert('Thank you for subscribing! We\'ll send updates to ' + email);
+                        form.reset();
+                    }
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>
