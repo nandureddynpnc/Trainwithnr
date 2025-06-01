@@ -1,48 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nandu Reddy</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #fdfdfd;
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6); /* semi-transparent for readability */
+      padding: 30px 20px;
+      margin-top: 60px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     }
 
     h1 {
-      font-size: 3rem;
-      color: #000;
-      margin: 40px 0 20px;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
     }
 
     .link-button {
+      display: inline-block;
       padding: 12px 24px;
-      font-size: 1.2rem;
-      border: 2px solid #000;
+      font-size: 1.1rem;
+      border: 2px solid white;
       background-color: transparent;
-      color: #000;
+      color: white;
       border-radius: 8px;
       cursor: pointer;
       text-decoration: none;
-      transition: background-color 0.3s, color 0.3s;
+      transition: 0.3s;
       margin-bottom: 30px;
     }
 
     .link-button:hover {
-      background-color: #000;
-      color: #fff;
+      background-color: white;
+      color: #000;
     }
 
     .video-container {
       width: 100%;
-      max-width: 500px;
       aspect-ratio: 9 / 16;
     }
 
@@ -51,18 +63,39 @@
       height: 100%;
       border: none;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .link-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>NANDU REDDY</h1>
-  <a class="link-button" href="https://www.instagram.com/nandureddy_pr/profilecard/?igsh=MXAzYXUzaGZoaG0xag==" target="_blank">Link</a>
+  <div class="container">
+    <h1>NANDU REDDY</h1>
+    <a
+      class="link-button"
+      href="https://www.instagram.com/nandureddy_pr/profilecard/?igsh=MXAzYXUzaGZoaG0xag=="
+      target="_blank"
+      >Link</a
+    >
 
-  <!-- Embedded YouTube Shorts Video -->
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/qW9DbXcaTA4?autoplay=1&mute=1&loop=1&playlist=qW9DbXcaTA4" 
-      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/qW9DbXcaTA4"
+        title="Nandu Reddy Shorts"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
 </body>
 </html>
