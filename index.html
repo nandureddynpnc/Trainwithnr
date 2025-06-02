@@ -1,101 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nandu Reddy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nandu Reddy Fitness Plan</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      background: url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
+      padding: 20px;
+      background-color: #f5f5f5;
     }
-
-    .container {
-      text-align: center;
-      background: rgba(0, 0, 0, 0.6); /* semi-transparent for readability */
-      padding: 30px 20px;
-      margin-top: 60px;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 450px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    }
-
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
+      text-align: center;
     }
-
-    .link-button {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 1.1rem;
-      border: 2px solid white;
-      background-color: transparent;
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px;
+      background-color: #007BFF;
       color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: 0.3s;
-      margin-bottom: 30px;
-    }
-
-    .link-button:hover {
-      background-color: white;
-      color: #000;
-    }
-
-    .video-container {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      border-radius: 6px;
+      cursor: pointer;
     }
-
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .link-button {
-        font-size: 1rem;
-        padding: 10px 20px;
-      }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .output {
+      margin-top: 30px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>NANDU REDDY</h1>
-    <a
-      class="link-button"
-      href="https://www.instagram.com/nandureddy_pr/profilecard/?igsh=MXAzYXUzaGZoaG0xag=="
-      target="_blank"
-      >Link</a
-    >
+    <h1>Nandu Reddy</h1><div class="button-grid">
+  <button onclick="showPlan('weightLoss')">Weight Loss</button>
+  <button onclick="showPlan('extremeWeightLoss')">Extreme Weight Loss</button>
+  <button onclick="showPlan('dirtyBulking')">Dirty Bulking</button>
+  <button onclick="showPlan('leanBulking')">Lean Bulking</button>
+  <button onclick="showPlan('normalCutting')">Normal Cutting</button>
+  <button onclick="showPlan('fastCutting')">Fast Cutting</button>
+</div>
 
-    <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/qW9DbXcaTA4"
-        title="Nandu Reddy Shorts"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
-</body>
+<div class="output" id="output"></div>
+
+  </div>  <script>
+    const plans = {
+      weightLoss: `
+        <h2>Weight Loss Plan</h2>
+        <h3>Diet</h3>
+        <ul>
+          <li>Oats breakfast or moong dal cheela</li>
+          <li>Dal, roti, sabzi for lunch</li>
+          <li>Light soup dinner with paneer/tofu</li>
+        </ul>
+        <h3>Workout</h3>
+        <ul>
+          <li>HIIT 3x/week</li>
+          <li>Strength training 2x/week</li>
+          <li>Daily walks 30 min</li>
+        </ul>
+      `,
+      extremeWeightLoss: `
+        <h2>Extreme Weight Loss Plan</h2>
+        <h3>Diet</h3>
+        <ul>
+          <li>Low-carb meals, 1200–1400 kcal/day</li>
+          <li>High protein (eggs, lentils, tofu)</li>
+          <li>Vegetable soups, detox water</li>
+        </ul>
+        <h3>Workout</h3>
+        <ul>
+          <li>HIIT 4x/week</li>
+          <li>Core & cardio combo daily</li>
+          <li>1 rest day with stretching</li>
+        </ul>
+      `,
+      dirtyBulking: `
+        <h2>Dirty Bulking Plan</h2>
+        <h3>Diet</h3>
+        <ul>
+          <li>High calorie surplus (3000+ kcal)</li>
+          <li>Rice, ghee, peanut butter, eggs</li>
+          <li>Frequent meals and snacks</li>
+        </ul>
+        <h3>Workout</h3>
+        <ul>
+          <li>Heavy lifting 5x/week</li>
+          <li>Low cardio</li>
+          <li>Compound lifts: deadlifts, squats</li>
+        </ul>
+      `,
+      leanBulking: `
+        <h2>Lean Bulking Plan</h2>
+        <h3>Diet</h3>
+        <ul>
+          <li>Clean calorie surplus (~500 kcal)</li>
+          <li>Brown rice, dal, chicken, paneer</li>
+          <li>Protein shake post-workout</li>
+        </ul>
+        <h3>Workout</h3>
+        <ul>
+          <li>Push-pull-legs split</li>
+          <li>Progressive overload focus</li>
+          <li>Cardio 2x/week</li>
+        </ul>
+      `,
+      normalCutting: `
+        <h2>Normal Cutting Plan</h2>
+        <h3>Diet</h3>
+        <ul>
+          <li>Moderate calorie deficit</li>
+          <li>Boiled eggs, salads, grilled veggies</li>
+          <li>Small meals throughout the day</li>
+        </ul>
+        <h3>Workout</h3>
+        <ul>
+          <li>Weight training 4x/week</li>
+          <li>Cardio 3x/week</li>
+          <li>Core exercises every other day</li>
+        </ul>
+      `,
+      fastCutting: `
+        <h2>Fast Cutting Plan</h2>
+        <h3>Diet</h3>
+        <ul>
+          <li>Intermittent fasting (16:8)</li>
+          <li>Low-carb, high-protein meals</li>
+          <li>Green tea, detox drinks</li>
+        </ul>
+        <h3>Workout</h3>
+        <ul>
+          <li>Cardio every day (30 min)</li>
+          <li>Weight training 5x/week</li>
+          <li>HIIT twice weekly</li>
+        </ul>
+      `,
+    };
+
+    function showPlan(type) {
+      document.getElementById('output').innerHTML = plans[type];
+    }
+  </script></body>
 </html>
