@@ -1,189 +1,93 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nandu Reddy Diet Plans</title>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Train With Nandu</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 15px;
-      margin: 30px 0;
-    }
-    button {
-      padding: 12px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background-color: #218838;
-    }
-    .output {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-top: 30px;
-    }
-    h2 {
-      color: #007bff;
-    }
-  </style>
-</head>
-<body>
-  <h1>Nandu Reddy</h1>
-  <div class="button-grid">
-    <button onclick="showPlan('Weight Loss')">Weight Loss</button>
-    <button onclick="showPlan('Extreme WeightLoss')">Extreme Weight Loss</button>
-    <button onclick="showPlan('Dirty Bulking')">Dirty Bulking</button>
-    <button onclick="showPlan('Lean Bulking')">Lean Bulking</button>
-    <button onclick="showPlan('Normal Cutting')">Normal Cutting</button>
-    <button onclick="showPlan('Fast Cutting')">Fast Cutting</button>
-  </div>
-  <div class="output" id="output"></div>  <script>
-    const plans = {
-      weightLoss: `
-        <h2>Weight Loss Plan</h2>
-        <h3>Diet Plan (Morning to Evening)</h3>
-        <ul>
-          <li><b>Morning:</b> warm water with lemon + soaked almonds</li>
-          <li><b>Breakfast:</b> Oats upma / moong dal cheela</li>
-          <li><b>Mid-Morning:</b> 1 seasonal fruit + green tea</li>
-          <li><b>Lunch:</b> Roti, dal, salad</li>
-          <li><b>Evening:</b> Roasted chana / makhana + buttermilk</li>
-          <li><b>Dinner:</b> Vegetable soup + grilled paneer</li>
-        </ul>
-        <h3>Workout Plan (Monday to Saturday)</h3>
-        <ul>
-          <li><b>Mon:</b> Full Body Strength + 20 min Cardio</li>
-          <li><b>Tue:</b> HIIT + Core workout</li>
-          <li><b>Wed:</b> Lower Body Strength</li>
-          <li><b>Thu:</b> Yoga or active rest</li>
-          <li><b>Fri:</b> Upper Body Strength + 20 min Cardio</li>
-          <li><b>Sat:</b> HIIT + Core workout</li>
-        </ul>
-      `,
-      extremeWeightLoss: `
-        <h2>Extreme Weight Loss Plan</h2>
-        <h3>Diet Plan (Morning to Evening)</h3>
-        <ul>
-          <li><b>Morning:</b> Warm water with apple cider vinegar</li>
-          <li><b>Breakfast:</b> Smoothie (spinach, banana, chia seeds)</li>
-          <li><b>Mid-Morning:</b> Apple or guava + green tea</li>
-          <li><b>Lunch:</b> 1 roti + sabzi + boiled dal</li>
-          <li><b>Evening:</b> Makhana / roasted chana</li>
-          <li><b>Dinner:</b> Vegetable soup + salad</li>
-        </ul>
-        <h3>Workout Plan (Monday to Saturday)</h3>
-        <ul>
-          <li><b>Mon:</b> Full-body HIIT + Abs</li>
-          <li><b>Tue:</b> Functional cardio training</li>
-          <li><b>Wed:</b> Core and bodyweight workout</li>
-          <li><b>Thu:</b> Power yoga / fast walk</li>
-          <li><b>Fri:</b> Tabata-style circuits</li>
-          <li><b>Sat:</b> High-intensity circuit training</li>
-        </ul>
-      `,
-      dirtyBulking: `
-        <h2>Dirty Bulking Plan</h2>
-        <h3>Diet Plan (Morning to Evening)</h3>
-        <ul>
-          <li><b>Morning:</b> Milk + banana shake with peanut butter</li>
-          <li><b>Breakfast:</b> Paratha with butter + eggs</li>
-          <li><b>Mid-Morning:</b> Dry fruits + whey protein</li>
-          <li><b>Lunch:</b> Rice, dal, chicken curry, curd</li>
-          <li><b>Evening:</b> Sandwich or paneer tikka</li>
-          <li><b>Dinner:</b> Heavy meal (rice + sabzi + meat)</li>
-        </ul>
-        <h3>Workout Plan (Monday to Saturday)</h3>
-        <ul>
-          <li><b>Mon:</b> Chest + Triceps</li>
-          <li><b>Tue:</b> Back + Biceps</li>
-          <li><b>Wed:</b> Legs (heavy squats, deadlifts)</li>
-          <li><b>Thu:</b> Shoulders + Abs</li>
-          <li><b>Fri:</b> Push day (compound movements)</li>
-          <li><b>Sat:</b> Pull day + core</li>
-        </ul>
-      `,
-      leanBulking: `
-        <h2>Lean Bulking Plan</h2>
-        <h3>Diet Plan (Morning to Evening)</h3>
-        <ul>
-          <li><b>Morning:</b> Whey protein + oats + banana</li>
-          <li><b>Breakfast:</b> Scrambled eggs + brown bread</li>
-          <li><b>Mid-Morning:</b> Greek yogurt + almonds</li>
-          <li><b>Lunch:</b> Brown rice, grilled chicken, sabzi</li>
-          <li><b>Evening:</b> Protein bar or smoothie</li>
-          <li><b>Dinner:</b> Paneer/tofu with veggies</li>
-        </ul>
-        <h3>Workout Plan (Monday to Saturday)</h3>
-        <ul>
-          <li><b>Mon:</b> Push (Chest, Shoulders, Triceps)</li>
-          <li><b>Tue:</b> Pull (Back, Biceps)</li>
-          <li><b>Wed:</b> Legs</li>
-          <li><b>Thu:</b> Rest / mobility work</li>
-          <li><b>Fri:</b> Upper Body Hypertrophy</li>
-          <li><b>Sat:</b> Lower Body Hypertrophy</li>
-        </ul>
-      `,
-      normalCutting: `
-        <h2>Normal Cutting Plan</h2>
-        <h3>Diet Plan (Morning to Evening)</h3>
-        <ul>
-          <li><b>Morning:</b> Lemon water + green tea</li>
-          <li><b>Breakfast:</b> Vegetable oats or boiled eggs</li>
-          <li><b>Mid-Morning:</b> Fruit + black coffee</li>
-          <li><b>Lunch:</b> Roti, sabzi, dal, salad</li>
-          <li><b>Evening:</b> Roasted chana / sprouts</li>
-          <li><b>Dinner:</b> Soup + grilled tofu</li>
-        </ul>
-        <h3>Workout Plan (Monday to Saturday)</h3>
-        <ul>
-          <li><b>Mon:</b> Chest + HIIT</li>
-          <li><b>Tue:</b> Back + Core</li>
-          <li><b>Wed:</b> Legs + Cardio</li>
-          <li><b>Thu:</b> Active rest / mobility</li>
-          <li><b>Fri:</b> Shoulders + Arms</li>
-          <li><b>Sat:</b> Full body circuit + HIIT</li>
-        </ul>
-      `,
-      fastCutting: `
-        <h2>Fast Cutting Plan</h2>
-        <h3>Diet Plan (Morning to Evening)</h3>
-        <ul>
-          <li><b>Morning:</b> Intermittent fasting (no food)</li>
-          <li><b>Breakfast:</b> (12 PM) Protein shake + salad</li>
-          <li><b>Mid-Afternoon:</b> Grilled chicken + veggies</li>
-          <li><b>Evening:</b> Black coffee + nuts</li>
-          <li><b>Dinner:</b> Low-carb meal (eggs, greens)</li>
-        </ul>
-        <h3>Workout Plan (Monday to Saturday)</h3>
-        <ul>
-          <li><b>Mon:</b> HIIT cardio</li>
-          <li><b>Tue:</b> Strength training</li>
-          <li><b>Wed:</b> HIIT + core</li>
-          <li><b>Thu:</b> Power yoga</li>
-          <li><b>Fri:</b> Full body circuit</li>
-          <li><b>Sat:</b> Tabata</li>
-        </ul>
-      `,
-    };
+      background-color: #000;
+      color: #fff;
+    }header {
+  background-color: #f1c40f;
+  color: #000;
+  padding: 1rem 2rem;
+  text-align: center;
+}
 
-    function showPlan(type) {
-      document.getElementById("output").innerHTML = plans[type];
-    }
-  </script></body>
-</html>
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: #111;
+  padding: 1rem;
+}
+
+nav a {
+  color: #f1c40f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-image: url('https://www.svgrepo.com/show/14051/fitness.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-top: 1rem;
+  color: #f1c40f;
+}
+
+.btn {
+  background: #f1c40f;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  color: #000;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: #777;
+}
+
+  </style>
+</head><body>
+  <header>
+    <h1>Train With Nandu</h1>
+    <p>Your Free Fitness Guide by <a href="https://www.instagram.com/nandureddy_pr" target="_blank">@nandureddy_pr</a></p>
+  </header>  <nav>
+    <a href="#guide">Fitness Guide</a>
+    <a href="#training">Personal Training</a>
+  </nav>  <div class="hero">
+    <h1>Transform Your Body</h1>
+    <a href="#training"><button class="btn">Start Personal Training</button></a>
+  </div>  <section id="guide">
+    <h2>Complete Fitness Guide</h2>
+    <ul>
+      <li>💪 Bulking and Cutting Guide</li>
+      <li>📋 Workout Splits: Push/Pull/Legs, Bro Split, Full Body</li>
+      <li>🥗 Vegetarian and Non-Veg Diet Plans</li>
+      <li>🍌 Weight Gain and Fat Loss Nutrition</li>
+      <li>🏋️ Home and Gym Workout Routines</li>
+      <li>📚 Beginner to Advanced Plans (PDFs & Videos)</
