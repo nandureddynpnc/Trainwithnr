@@ -1,93 +1,130 @@
 <!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Train With Nandu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: #000;
-      color: #fff;
+      color: #FFD700;
     }header {
-  background-color: #f1c40f;
-  color: #000;
-  padding: 1rem 2rem;
+  background-color: #111;
+  padding: 20px;
   text-align: center;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  background: #111;
-  padding: 1rem;
+  background-color: #222;
 }
 
 nav a {
-  color: #f1c40f;
+  color: #FFD700;
+  padding: 14px 20px;
   text-decoration: none;
   font-weight: bold;
 }
 
+nav a:hover {
+  background-color: #FFD700;
+  color: #000;
+}
+
 .hero {
+  background: url('https://images.unsplash.com/photo-1598970434795-0c54fe7c0642') no-repeat center center/cover;
+  height: 90vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  background-image: url('https://www.svgrepo.com/show/14051/fitness.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 10px #000;
+  flex-direction: column;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-top: 1rem;
-  color: #f1c40f;
+  font-size: 3em;
 }
 
 .btn {
-  background: #f1c40f;
+  background-color: #FFD700;
   border: none;
-  padding: 0.8rem 1.5rem;
   color: #000;
-  font-weight: bold;
-  margin-top: 1rem;
+  padding: 15px 30px;
+  font-size: 1em;
+  margin-top: 20px;
   cursor: pointer;
+  border-radius: 10px;
 }
 
-section {
-  padding: 2rem;
-  max-width: 800px;
+.section {
+  padding: 50px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
-footer {
+.section h2 {
   text-align: center;
-  padding: 1rem;
-  background: #111;
-  color: #777;
+  margin-bottom: 30px;
+}
+
+.guide {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+.insta {
+  color: #FFD700;
+  text-decoration: none;
 }
 
   </style>
 </head><body>
-  <header>
-    <h1>Train With Nandu</h1>
-    <p>Your Free Fitness Guide by <a href="https://www.instagram.com/nandureddy_pr" target="_blank">@nandureddy_pr</a></p>
-  </header>  <nav>
-    <a href="#guide">Fitness Guide</a>
+  <header>Train With Nandu</header>
+  <nav>
     <a href="#training">Personal Training</a>
-  </nav>  <div class="hero">
-    <h1>Transform Your Body</h1>
-    <a href="#training"><button class="btn">Start Personal Training</button></a>
-  </div>  <section id="guide">
-    <h2>Complete Fitness Guide</h2>
-    <ul>
-      <li>💪 Bulking and Cutting Guide</li>
-      <li>📋 Workout Splits: Push/Pull/Legs, Bro Split, Full Body</li>
-      <li>🥗 Vegetarian and Non-Veg Diet Plans</li>
-      <li>🍌 Weight Gain and Fat Loss Nutrition</li>
-      <li>🏋️ Home and Gym Workout Routines</li>
-      <li>📚 Beginner to Advanced Plans (PDFs & Videos)</
+    <a href="#guides">Fitness Guides</a>
+    <a href="https://instagram.com/nandureddy_pr" target="_blank">Instagram</a>
+  </nav>  <section class="hero">
+    <h1>Transform Your Body with Nandu</h1>
+    <a href="https://instagram.com/nandureddy_pr" target="_blank" class="btn">Join Training Now</a>
+  </section>  <section id="guides" class="section">
+    <h2>Complete Fitness Guide</h2><div class="guide">
+  <h3>1. Fat Loss Tips</h3>
+  <p>- Calorie deficit diet<br>- High-protein meals<br>- Daily walking + HIIT<br>- Hydration & sleep</p>
+</div>
+
+<div class="guide">
+  <h3>2. Muscle Building</h3>
+  <p>- Progressive overload workouts<br>- Eat more protein & carbs<br>- Rest days are important<br>- Track your lifts weekly</p>
+</div>
+
+<div class="guide">
+  <h3>3. Vegetarian Diet Plan (Bulking)</h3>
+  <p>- Breakfast: Oats + Peanut Butter + Banana<br>- Lunch: Rice + Dal + Paneer + Veggies<br>- Snack: Roasted Chana + Fruits<br>- Dinner: Chapati + Soya + Salad</p>
+</div>
+
+<div class="guide">
+  <h3>4. Strength Routine (Weekly)</h3>
+  <p>- Mon: Push (Chest, Shoulder, Triceps)<br>- Tue: Pull (Back, Biceps)<br>- Wed: Legs<br>- Thu: Rest<br>- Fri: Push<br>- Sat: Pull<br>- Sun: Legs</p>
+</div>
+
+  </section>  <footer>
+    <p>Follow me on Instagram: <a class="insta" href="https://instagram.com/nandureddy_pr" target="_blank">@nandureddy_pr</a><br>
+      &copy; 2025 Train With Nandu - All rights reserved.</p>
+  </footer>
+</body></html>
